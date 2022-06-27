@@ -1,0 +1,11 @@
+---
+title: "Let discuss R functions"
+author: 
+       - Fernando Diaz
+format: revealjs 
+theme: ["pp.scss"]
+incremental: true
+slide-number: c/t
+---
+
+#Presentation using New Quarto markdown

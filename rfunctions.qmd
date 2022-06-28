@@ -1,11 +1,91 @@
 ---
-title: "Let discuss R functions"
+title: "Let discuss R functions-Presentation using new Quarto"
 author: 
        - Fernando Diaz
 format: revealjs 
-theme: ["pp.scss"]
 incremental: true
 slide-number: c/t
+footer: Bayer HealthCare R functions discussion on 30June2022
+editor: visual
 ---
 
-#Presentation using New Quarto markdown
+```{r}
+#| include: false
+library(dplyr)
+
+```
+
+## 
+
+### R functions 
+
+-   Functions take some code,name it, then we re use it.
+
+-   we declare arguments within the function
+
+-   Built-in functions:
+
+-   Mean(),summary()
+
+-   paste():concatenate a series of strings
+
+-   class(), Typeof(),attributes(),str()
+
+-   is.list(),is.vector()
+
+---
+
+<div>
+
+### R functions -Example 1
+
+</div>
+
+<div>
+
+addone \<- function (x) {\
+x + 1 \
+}\
+addone(3)
+
+</div>
+
+---
+
+### R functions -Example 2
+
+rfan \<- function (a) {\
+for (x in 1:a) {\
+print ("I like R!")
+
+}\
+}\
+rfan(10)
+
+---
+
+::: panel-tabset
+### Tab R function
+
+add_num \<- function (num) {
+
+num + 1
+
+num + 2
+
+Num +3
+
+}
+
+add_num (3)
+:::
+
+::: panel-tabset
+### Answer
+
+6
+
+R will only display the last request
+:::
+
+###  

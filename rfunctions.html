@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-0.9.587">
 
   <meta name="author" content="Fernando Diaz">
-  <title>Let discuss R functions</title>
+  <title>Let discuss R functions-Presentation using new Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -319,15 +319,70 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">Let discuss R functions</h1>
+  <h1 class="title">Let discuss R functions-Presentation using new Quarto</h1>
   <p class="author">Fernando Diaz</p>
 </section>
 
+<section id="section" class="slide level2">
+<h2></h2>
+<h3 id="r-functions">R functions</h3>
+<ul>
+<li class="fragment"><p>Functions take some code,name it, then we re use it.</p></li>
+<li class="fragment"><p>we declare arguments within the function</p></li>
+<li class="fragment"><p>Built-in functions:</p></li>
+<li class="fragment"><p>Mean(),summary()</p></li>
+<li class="fragment"><p>paste():concatenate a series of strings</p></li>
+<li class="fragment"><p>class(), Typeof(),attributes(),str()</p></li>
+<li class="fragment"><p>is.list(),is.vector()</p></li>
+</ul>
+</section>
 <section class="slide level2">
 
-<p>#Presentation using New Quarto markdown</p>
-<div class="footer footer-default">
+<h3 id="r-functions--example-1">R functions -Example 1</h3>
+<div>
+<p>addone &lt;- function (x) {<br>
+x + 1<br>
+}<br>
+addone(3)</p>
+</div>
+</section>
+<section class="slide level2">
 
+<h3 id="r-functions--example-2">R functions -Example 2</h3>
+<p>rfan &lt;- function (a) {<br>
+for (x in 1:a) {<br>
+print (“I like R!”)</p>
+<p>}<br>
+}<br>
+rfan(10)</p>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Tab R function</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>add_num &lt;- function (num) {</p>
+<p>num + 1</p>
+<p>num + 2</p>
+<p>Num +3</p>
+<p>}</p>
+<p>add_num (3)</p>
+</div>
+</div>
+</div>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>6</p>
+<p>R will only display the last request</p>
+</div>
+</div>
+</div>
+<h3 id="section-1"></h3>
+<div class="footer footer-default">
+<p>Bayer HealthCare R functions discussion on 30June2022</p>
 </div>
 </section>
     </div>
@@ -541,6 +596,48 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

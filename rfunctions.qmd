@@ -1,11 +1,14 @@
 ---
-title: "Let discuss R functions-Presentation using new Quarto"
+title: "Using Quarto new Markdown"
 author: 
        - Fernando Diaz
 format: revealjs 
-incremental: true
-slide-number: c/t
 footer: Bayer HealthCare R functions discussion on 30June2022
+slide-number: c/t
+incremental: true
+title-slide-attributes: 
+  data-background-image: img/R-functions.jpg
+  data-background-size: cover
 editor: visual
 ---
 

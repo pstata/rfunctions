@@ -1,0 +1,213 @@
+---
+title: "Using Quarto new Markdown"
+author: 
+       - Fernando Diaz
+format: revealjs 
+footer: Bayer HealthCare R functions discussion on 30June2022
+slide-number: c/t
+incremental: true
+title-slide-attributes: 
+  data-background-image: img/R-functions.jpg
+  data-background-size: cover
+editor: visual
+---
+
+```{r}
+
+#| include: false
+library(dplyr)
+
+```
+
+
+
+### R functions
+
+-   Functions take some code,name it, then we re use it.
+
+-   we declare arguments within the function
+
+-   Built-in functions:
+
+-   Mean(),summary()
+
+-   paste():concatenate a series of strings
+
+-   class(), Typeof(),attributes(),str()
+
+-   is.list(),is.vector()
+
+------------------------------------------------------------------------
+
+<div>
+
+### R functions -Example 1
+
+</div>
+
+<div>
+
+addone \<- function (x) {\
+x + 1\
+}\
+addone(3)
+
+</div>
+
+------------------------------------------------------------------------
+
+### R functions -Example 2
+
+rfan \<- function (a) {\
+for (x in 1:a) {\
+print ("I like R!")
+
+}\
+}\
+rfan(10)
+
+------------------------------------------------------------------------
+
+::: panel-tabset
+### Last declared value
+
+add_num \<- function (num) {
+
+num + 1
+
+num + 2
+
+num + 3
+
+}
+
+add_num (3)
+
+### Solution
+
+6
+
+R will only display the last request
+:::
+
+------------------------------------------------------------------------
+
+::: panel-tabset
+### Ellipsis example
+
+add_numx \<- function (...) {
+
+total \<- 0
+
+#\[...\]extracts the arguments to a list
+
+for \[value in the list (...)\] {
+
+total = total + value } total }
+
+Example 1: add_numx(2,3,4,5)
+
+Example 2: add_numx(2,3)
+
+### Solution
+
+Example 1: 14
+
+Example 2: 5
+
+R will take any of the requested arguments
+:::
+
+---
+
+::: panel-tabset
+### Order of Arguments
+
+
+add_numx \<- function (a,b,c) {
+
+out \<- a\*b+c
+
+** Order of arguments matter **
+
+print(out) }
+
+Example 1: add_numx(3,4,5)
+
+Example 2: add_numx(5,4,3)
+
+### Solution
+
+Example 1: 17
+
+Example 2: 23
+
+Make sure the order of the arguments is correct!
+
+
+:::
+
+
+---
+
+::: panel-tabset
+### Order of Arguments (Contd)
+
+
+add_numm \<- function (a,b,c) {
+
+out \<- a\*b+c
+
+** Order of arguments matter **
+
+print(out) }
+
+Example 1: add_numm(a = 3, b = 4, c = 5)
+
+Example 2: add_numm( c= 5,b = 4, a = 3)
+
+### Solution
+
+Example 1: 17
+
+Example 2: 17
+
+Same answer
+
+
+:::
+
+---
+
+::: panel-tabset
+
+### Lazy evaluation 
+
+
+sqrtf1 <- function ( a,b,c) {
+
+d= a^2 + b^2 
+
+e= a^3 + b^3
+
+print (d)
+
+print (e)
+
+}
+
+
+Example 1: sqrtf1 (2,3)
+ 
+ 
+### Solution
+
+Example 1: 13
+
+Example 2: 35
+
+Same answer
+
+
+:::
+

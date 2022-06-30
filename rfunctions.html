@@ -323,8 +323,8 @@
   <p class="author">Fernando Diaz</p>
 </section>
 
-<section id="section" class="slide level2">
-<h2></h2>
+<section class="slide level2">
+
 <h3 id="r-functions">R functions</h3>
 <ul>
 <li class="fragment"><p>Functions take some code,name it, then we re use it.</p></li>
@@ -359,28 +359,108 @@ rfan(10)</p>
 <section class="slide level2">
 
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Tab R function</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Last declared value</a></li><li><a href="#tabset-1-2">Solution</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <p>add_num &lt;- function (num) {</p>
 <p>num + 1</p>
 <p>num + 2</p>
-<p>Num +3</p>
+<p>num + 3</p>
 <p>}</p>
 <p>add_num (3)</p>
 </div>
-</div>
-</div>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-1-2">
 <p>6</p>
 <p>R will only display the last request</p>
 </div>
 </div>
 </div>
-<h3 id="section-1"></h3>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Ellipsis example</a></li><li><a href="#tabset-2-2">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>add_numx &lt;- function (…) {</p>
+<p>total &lt;- 0</p>
+<p>#[…]extracts the arguments to a list</p>
+<p>for [value in the list (…)] {</p>
+<p>total = total + value } total }</p>
+<p>Example 1: add_numx(2,3,4,5)</p>
+<p>Example 2: add_numx(2,3)</p>
+</div>
+<div id="tabset-2-2">
+<p>Example 1: 14</p>
+<p>Example 2: 5</p>
+<p>R will take any of the requested arguments</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Order of Arguments</a></li><li><a href="#tabset-3-2">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p>add_numx &lt;- function (a,b,c) {</p>
+<p>out &lt;- a*b+c</p>
+<p>** Order of arguments matter **</p>
+<p>print(out) }</p>
+<p>Example 1: add_numx(3,4,5)</p>
+<p>Example 2: add_numx(5,4,3)</p>
+</div>
+<div id="tabset-3-2">
+<p>Example 1: 17</p>
+<p>Example 2: 23</p>
+<p>Make sure the order of the arguments is correct!</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Order of Arguments (Contd)</a></li><li><a href="#tabset-4-2">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p>add_numm &lt;- function (a,b,c) {</p>
+<p>out &lt;- a*b+c</p>
+<p>** Order of arguments matter **</p>
+<p>print(out) }</p>
+<p>Example 1: add_numm(a = 3, b = 4, c = 5)</p>
+<p>Example 2: add_numm( c= 5,b = 4, a = 3)</p>
+</div>
+<div id="tabset-4-2">
+<p>Example 1: 17</p>
+<p>Example 2: 17</p>
+<p>Same answer</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Lazy evaluation</a></li><li><a href="#tabset-5-2">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>sqrtf1 &lt;- function ( a,b,c) {</p>
+<p>d= a^2 + b^2</p>
+<p>e= a^3 + b^3</p>
+<p>print (d)</p>
+<p>print (e)</p>
+<p>}</p>
+<p>Example 1: sqrtf1 (2,3)</p>
+</div>
+<div id="tabset-5-2">
+<p>Example 1: 13</p>
+<p>Example 2: 35</p>
+<p>Same answer</p>
+</div>
+</div>
+</div>
 <div class="footer footer-default">
 <p>Bayer HealthCare R functions discussion on 30June2022</p>
 </div>
